@@ -1,0 +1,14 @@
+# Pasang dengan:  pip install -r requirements.txt
+# Anaconda sudah memuat sebagian besar; yang biasanya perlu ditambah: streamlit, tensorflow.
+
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+scikit-learn>=1.3
+statsmodels>=0.14
+streamlit>=1.35
+jupyter>=1.0
+ipykernel>=6.25
+
+# Deep learning (Hari 4). Boleh dipasang belakangan bila instalasi lambat.
+tensorflow>=2.15

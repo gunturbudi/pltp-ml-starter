@@ -1,0 +1,21 @@
+tanggal,kode_unit,shift,operator,cf_persen,catatan
+2025-06-01,ARL,Pagi,Bagus P.,88.2,Operasi normal
+2025-06-02,DRG,Siang,Sari M.,87.1,Operasi normal
+2025-06-03,ARL,Malam,Yudha K.,86.4,Tekanan uap sedikit turun
+2025-06-04,DRG,Pagi,Nining R.,82.3,"Vibrasi turbin naik, dipantau"
+2025-06-05,ARL,Siang,Tomi A.,89.9,Operasi normal
+2025-06-06,DRG,Malam,Bagus P.,85.6,Pembersihan scaling pipa uap
+2025-06-07,ARL,Pagi,Sari M.,85.4,Operasi normal
+2025-06-08,DRG,Siang,Yudha K.,77.4,Cooling tower fan #2 dimatikan sementara
+2025-06-09,ARL,Malam,Nining R.,81.5,Operasi normal
+2025-06-10,DRG,Pagi,Tomi A.,86.4,Derating karena pasokan uap turun
+2025-06-11,ARL,Siang,Bagus P.,81.4,Operasi normal
+2025-06-12,DRG,Malam,Sari M.,84.8,Operasi normal
+2025-06-13,ARL,Pagi,Yudha K.,82.5,Tekanan uap sedikit turun
+2025-06-14,DRG,Siang,Nining R.,58.7,"Vibrasi turbin naik, dipantau"
+2025-06-15,ARL,Malam,Tomi A.,93.6,Operasi normal
+2025-06-16,DRG,Pagi,Bagus P.,78.6,Pembersihan scaling pipa uap
+2025-06-17,ARL,Siang,Sari M.,89.8,Operasi normal
+2025-06-18,DRG,Malam,Yudha K.,84.8,Cooling tower fan #2 dimatikan sementara
+2025-06-19,ARL,Pagi,Nining R.,89.4,Operasi normal
+2025-06-20,DRG,Siang,Tomi A.,85.0,Derating karena pasokan uap turun
