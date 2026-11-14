@@ -19,6 +19,9 @@ memprogram**, jadi kejelasan lebih penting daripada kecanggihan.
   tanpa bertanya.
 - Notebook ada di `notebook/` dan membaca data lewat path relatif `../data/...`.
   Aplikasi Streamlit ada di `app/` dan membaca data relatif terhadap lokasi file aplikasi.
+- Skrip `.py` (pekerjaan yang dijalankan berulang) ada di `skrip/`, membaca data lewat
+  `Path(__file__).resolve().parent.parent / "data"`, menaruh bagian utama di
+  `if __name__ == "__main__":`, mencetak jumlah baris, dan memakai `assert` untuk hasil penting.
 - Satu sel notebook = satu langkah. Beri komentar singkat **dalam bahasa Indonesia**.
 - Setiap langkah yang mengubah jumlah baris (`merge`, `dropna`, `drop_duplicates`, filter)
   harus mencetak jumlah baris sebelum dan sesudah.
