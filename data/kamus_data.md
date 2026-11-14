@@ -160,8 +160,21 @@ jawaban ketika formulir dibaca oleh model AI.
 | Sengaja tidak ada | **kategori penyebab** — harus disimpulkan dari uraian kejadian |
 | `kunci_dokumen.csv` | isi sebenarnya dari tiap formulir, termasuk kondisinya |
 
-`rekaman_ai/` berisi jawaban model yang sudah direkam untuk prompt standar di notebook,
-supaya notebook tetap berjalan ketika server model tidak terjangkau. Tidak perlu dibuka.
+---
+
+## h. `citra_termal/` — 160 citra termal panel listrik (gambar)
+
+Citra inframerah **simulasi** panel listrik (2–4 MCB/terminal beserta kabelnya), seperti hasil
+inspeksi termografi rutin. Dipakai untuk latihan data gambar: baseline aturan, lalu model.
+
+| Hal | Keterangan |
+|---|---|
+| Nama file | `T001.png` … `T160.png` — RGB, 160 × 120 piksel |
+| Skala warna | tetap untuk semua gambar: palet *inferno*, hitam = 20 °C, kuning pucat = 100 °C |
+| `label.csv` | `file`, `label`, `suhu_maks_c` (suhu tertinggi di gambar, °C — seperti yang dicatat kamera) |
+| Label | 80 **normal** · 80 **titik_panas** |
+| Aturan label | `titik_panas` bila ada titik **≥ 12 °C lebih panas** dari komponen di sekitarnya (ΔT, seperti praktik termografi). `normal` boleh punya titik hangat ringan (ΔT 2–8 °C) |
+| Jebakan | suhu lingkungan (24–38 °C) dan beban berbeda tiap gambar, sehingga panel normal yang panas bisa lebih panas dari titik panas di panel yang dingin. Ambang `suhu_maks_c` saja **tidak sempurna** |
 
 ---
 

@@ -11,15 +11,25 @@ dan dashboard Streamlit pertama Anda.
 
 ---
 
-## 1. Unduh
+## 1. Unduh — dengan Git (disarankan)
 
-**Tanpa Git:** tombol hijau **Code → Download ZIP**, lalu ekstrak ke `Documents/`.
-
-**Dengan Git:**
+Di *Anaconda Prompt*:
 
 ```bash
+cd %USERPROFILE%\Documents
 git clone https://github.com/gunturbudi/pltp-ml-starter.git
+cd pltp-ml-starter
 ```
+
+**Setiap pagi** ambil materi dan data terbaru:
+
+```bash
+git pull
+```
+
+Belum punya Git? Pasang [Git for Windows](https://git-scm.com/download/win), atau di Anaconda
+Prompt: `conda install git`. Jika github.com terblokir: **Code → Download ZIP** (atau salinan
+dari USB), ekstrak ke `Documents/`, ganti nama foldernya menjadi `pltp-ml-starter`.
 
 ## 2. Pasang
 
@@ -56,6 +66,8 @@ Browser terbuka di `http://localhost:8501`. Lalu minta AI agent mengubahnya, mis
 | Folder / file | Isi |
 |---|---|
 | `data/` | 6 CSV simulasi PLTP Nusantara + `kamus_data.md` (**baca ini dulu**) |
+| `data/dokumen/` | 30 formulir laporan gangguan hasil scan + kunci jawabannya (latihan OCR/VLM) |
+| `data/citra_termal/` | 160 citra termal panel listrik + `label.csv` (latihan data gambar) |
 | `data/olahan/` | tempat menyimpan hasil olahan Anda — file mentah di `data/` **jangan diubah** |
 | `notebook/` | notebook *rekaman prompt* Hari 1–2 (Rencana C, lihat bawah) |
 | `app/app_mulai.py` | dashboard Streamlit pertama, titik awal capstone |

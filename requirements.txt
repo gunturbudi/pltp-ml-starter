@@ -9,6 +9,7 @@ statsmodels>=0.14
 streamlit>=1.35
 jupyter>=1.0
 ipykernel>=6.25
+pillow>=10.0
 
 # Deep learning (Hari 4). Boleh dipasang belakangan bila instalasi lambat.
 tensorflow>=2.15

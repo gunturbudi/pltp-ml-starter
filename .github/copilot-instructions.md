@@ -7,6 +7,9 @@ memprogram**, jadi kejelasan lebih penting daripada kecanggihan.
 - Data mentah ada di `data/` dan **TIDAK BOLEH diubah, ditimpa, atau dihapus**.
 - Simpan semua hasil olahan ke `data/olahan/`.
 - Arti setiap kolom dan rentang wajarnya ada di `data/kamus_data.md` — baca sebelum menganalisis.
+- Data gambar: `data/dokumen/` (30 formulir scan + `kunci_dokumen.csv`) dan `data/citra_termal/`
+  (160 PNG + `label.csv`). Baca gambar dengan Pillow/matplotlib; jangan mengubah atau
+  memindahkan file aslinya.
 - `kode_unit` di `produksi_bulanan.csv` punya salah ketik huruf besar-kecil; ada 1 baris
   duplikat dan 12 nilai kosong di `energi_aktual_mwh`. **Jangan memperbaikinya diam-diam** —
   tunjukkan dulu ke pengguna dan minta keputusan.

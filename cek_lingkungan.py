@@ -44,6 +44,31 @@ try:
 except Exception as e:
     cek("data/produksi_bulanan.csv", False, f"tidak terbaca ({type(e).__name__})")
 
+# Data gambar: formulir scan dan citra termal
+try:
+    from PIL import Image
+    cek("Pillow (baca gambar)", True, Image.__version__ if hasattr(Image, "__version__") else "")
+except Exception as e:
+    cek("Pillow (baca gambar)", False, f"belum terpasang -> pip install pillow  ({type(e).__name__})")
+
+dok = AKAR / "data" / "dokumen"
+n_dok = len([f for f in dok.glob("LG-*") if f.suffix.lower() in (".png", ".jpg")]) if dok.exists() else 0
+cek("data/dokumen/", n_dok == 30 and (dok / "kunci_dokumen.csv").exists(),
+    f"{n_dok} formulir (harus 30) + kunci_dokumen.csv")
+
+citra = AKAR / "data" / "citra_termal"
+try:
+    import pandas as pd
+    import numpy as np
+    from PIL import Image
+    label = pd.read_csv(citra / "label.csv")
+    n_png = len(list(citra.glob("T*.png")))
+    ukuran = np.asarray(Image.open(citra / label["file"].iloc[0])).shape
+    cek("data/citra_termal/", n_png == 160 and len(label) == 160 and ukuran == (120, 160, 3),
+        f"{n_png} gambar, label {len(label)} baris, ukuran {ukuran} (harus 160 · 160 · (120, 160, 3))")
+except Exception as e:
+    cek("data/citra_termal/", False, f"tidak terbaca ({type(e).__name__}) -> git pull, atau salin ulang folder data")
+
 wajib = all(hasil)
 
 try:
