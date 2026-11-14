@@ -11,3 +11,14 @@ Satu baris untuk setiap langkah penting. Bagian dari presentasi capstone Hari 5.
 | 3 |  |  |  |  |
 | 4 |  |  |  |  |
 | 5 |  |  |  |  |
+
+## Pustaka prompt pribadi
+
+Prompt yang menghasilkan jawaban baik — salin, pakai lagi, sesuaikan.
+Struktur: **konteks – tugas – batasan – format – verifikasi**.
+
+| Untuk | Prompt |
+|---|---|
+| contoh: meneruskan error | Di sel ... saya ingin .... Muncul error: (salin lengkap). Saya berharap .... Jelaskan penyebabnya dulu, lalu perbaiki tanpa mengubah file CSV. |
+|  |  |
+|  |  |
