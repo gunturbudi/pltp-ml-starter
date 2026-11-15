@@ -28,8 +28,8 @@ git pull
 ```
 
 Belum punya Git? Pasang [Git for Windows](https://git-scm.com/download/win), atau di Anaconda
-Prompt: `conda install git`. Jika github.com terblokir: **Code → Download ZIP** (atau salinan
-dari USB), ekstrak ke `Documents/`, ganti nama foldernya menjadi `pltp-ml-starter`.
+Prompt: `conda install git`. Jika github.com terblokir: **Code → Download ZIP**,
+ekstrak ke `Documents/`, ganti nama foldernya menjadi `pltp-ml-starter`.
 
 ## 2. Pasang
 
@@ -69,7 +69,7 @@ Browser terbuka di `http://localhost:8501`. Lalu minta AI agent mengubahnya, mis
 | `data/dokumen/` | 30 formulir laporan gangguan hasil scan + kunci jawabannya (latihan OCR/VLM) |
 | `data/citra_termal/` | 160 citra termal panel listrik + `label.csv` (latihan data gambar) |
 | `data/olahan/` | tempat menyimpan hasil olahan Anda — file mentah di `data/` **jangan diubah** |
-| `notebook/` | notebook *rekaman prompt* Hari 1–2 (Rencana C, lihat bawah) |
+| `notebook/` | notebook *rekaman prompt* Hari 1–2 (Rencana D, lihat bawah) |
 | `app/app_mulai.py` | dashboard Streamlit pertama, titik awal capstone |
 | `AGENTS.md`, `GEMINI.md`, `CLAUDE.md`, `.github/copilot-instructions.md` | aturan proyek yang otomatis dibaca AI agent |
 | `prompt-log.md` | templat catatan prompt — diisi sepanjang pelatihan |
@@ -80,9 +80,10 @@ Browser terbuka di `http://localhost:8501`. Lalu minta AI agent mengubahnya, mis
 
 Jaringan tempat pelatihan bisa memblokir layanan AI. Urutan cadangan:
 
-- **Rencana A** — VPN atau hotspot HP, lalu pakai Antigravity / Copilot seperti biasa.
-- **Rencana B** — AI lokal perusahaan (Qwen) lewat VS Code + ekstensi *Continue*.
-- **Rencana C** — buka `notebook/ai-rekaman-hari*.ipynb`: prompt + kode hasil AI sudah tersedia.
+- **Rencana A** — Antigravity / VS Code + Copilot (bila terblokir: VPN atau hotspot HP).
+- **Rencana B** — OpenCode, agent open-source dengan model gratis tanpa akun.
+- **Rencana C** — Google Colab di browser, dengan Gemini bawaan. Tanpa instalasi.
+- **Rencana D** — buka `notebook/ai-rekaman-hari*.ipynb`: prompt + kode hasil AI sudah tersedia.
   Baca, tebak hasilnya, jalankan, periksa.
 
 Detail langkahnya ada di [`docs/rencana-koneksi.md`](docs/rencana-koneksi.md).
