@@ -4,22 +4,31 @@ File ini adalah "ingatan" proyek. Agent membacanya saat mulai dan memperbaruinya
 menyelesaikan satu tugas. Riwayat chat hilang saat Anda pindah editor; isi file ini tidak.
 
 ## Tujuan saat ini
-<!-- mis. Capstone P2: klasifikasi forced outage, dashboard Streamlit -->
+Menyediakan kode untuk membuka dan mengeksplorasi `data/produksi_bulanan.csv` tanpa mengubah data mentah.
 
 ## Sudah selesai
-<!-- - [tanggal] notebook/eda-gangguan.ipynb: 2 grafik FO per unit -->
+- [2026-11-16] Eksplorasi struktur, kualitas, dan pola produksi bulanan; ringkasan dihitung tanpa menyimpan perubahan pada CSV.
+- [2026-11-16] Membuat dan menjalankan skrip Python untuk mengulang ringkasan, pemeriksaan kualitas, dan grafik.
+- [2026-11-16] Menambahkan sel pembuka CSV di `notebook/latihan_notebook.ipynb`; path relatif berhasil diuji dari folder notebook.
+- [2026-11-16] Menambahkan sel grafik scatter `uap_rencana_ton` vs `uap_aktual_ton` per unit di `notebook/latihan_notebook.ipynb` menggunakan `gaya_grafik.py`.
 
 ## File yang dibuat / diubah
-<!-- - data/olahan/gangguan_bersih.csv — 1.080 baris -->
+- `skrip/eksplorasi_produksi.py` — laporan kualitas data, ringkasan, dan grafik eksplorasi.
+- `notebook/latihan_notebook.ipynb` — sel pandas untuk membaca data dan grafik scatter `uap_rencana_ton` vs `uap_aktual_ton`.
+- `gambar/eksplorasi_cf_per_unit.png` dan `gambar/eksplorasi_energi_tahunan.png` — keluaran grafik skrip.
+- `docs/catatan-kerja.md` — catatan hasil eksplorasi dan tindak lanjut.
 
 ## Keputusan pengguna
-<!-- - baris duplikat di produksi_bulanan.csv dihapus (1 baris), disetujui -->
+Belum ada. Tidak ada pembersihan atau perubahan data yang dilakukan.
 
 ## Langkah berikutnya
-<!-- 1. buat baseline "selalu tidak FO" -->
+1. Tinjau nilai `energi_aktual_mwh` di luar rentang dan tentukan perlakuan saat cleaning.
+2. Jika cleaning diminta, minta keputusan untuk variasi huruf `kode_unit`, baris duplikat, dan nilai kosong sebelum mengubah data.
 
 ## Masalah terbuka
-<!-- - recall model masih di bawah baseline aturan CF turun -->
+- Kernel notebook Python 3.12.13 belum memiliki `ipykernel`; sel belum bisa dijalankan dari notebook, meski baris pembacaan CSV berhasil diuji dari folder `notebook/`.
+- Beberapa nilai berada di luar rentang kamus: sembilan `uap_rencana_ton` dan delapan `energi_rencana_mwh` di bawah batas minimum; delapan `energi_aktual_mwh` di atas 75.000. Perlu verifikasi.
+- Kode `arl`/`ARL` dan `Btl`/`btl`/`BTL` bervariasi huruf besar-kecil; terdapat satu duplikat identik dan 12 energi aktual kosong.
 
 ## Alat yang dipakai
 <!-- - 17 Nov: Antigravity → kuota habis → lanjut di Cursor -->
