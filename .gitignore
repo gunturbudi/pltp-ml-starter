@@ -13,3 +13,9 @@ data/olahan/*
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# gambar dan model buatan peserta
+gambar/*
+!gambar/.gitkeep
+model/*
+!model/.gitkeep

@@ -6,8 +6,8 @@ berikutnya; kelas tetap berjalan.
 
 | Rencana | Alat | Butuh | Cocok bila |
 |---|---|---|---|
-| **A** | Antigravity atau VS Code + Copilot | akses Google / GitHub | semuanya lancar (alat utama) |
-| **B** | OpenCode (agent open-source, model gratis) | akses `opencode.ai` | Antigravity/Copilot terblokir atau kuota habis |
+| **A** | Antigravity, VS Code + Copilot, Cursor, Kiro, atau Windsurf | akses situs editor + akun | semuanya lancar (alat utama: Antigravity) |
+| **B** | OpenCode (agent open-source, model gratis) — atau agent terminal lain | akses `opencode.ai` | editor Rencana A terblokir atau kuota habis |
 | **C** | Google Colab + Gemini (di browser) | akun Google, browser | laptop gagal instalasi, atau editor tidak bisa tersambung |
 | **D** | Notebook rekaman prompt | tidak butuh internet | semua rencana di atas gagal |
 
@@ -17,17 +17,29 @@ hanya boleh diproses dengan AI yang disetujui perusahaan.
 ## Uji cepat (2 menit)
 
 1. Buka `https://github.com`, `https://gemini.google.com`, dan `https://opencode.ai` di browser.
-2. Di Antigravity atau VS Code + Copilot, ketik di panel chat: *"Balas dengan kata OK."*
+2. Di editor pilihan Anda (Antigravity, VS Code + Copilot, Cursor, Kiro, …), ketik di panel chat: *"Balas dengan kata OK."*
 
 Jawaban muncul dalam ±10 detik → **Rencana A berjalan**. Tidak muncul / error jaringan → lanjut.
 
-## Rencana A — Antigravity / VS Code + Copilot
+## Rencana A — editor ber-AI
 
-Alat utama pelatihan. Bila jaringan lokasi memblokir, coba **VPN** yang diizinkan kebijakan IT
+Alat utama pelatihan adalah **Antigravity**. Semua editor di bawah dibangun di atas VS Code, jadi
+langkah *Open Folder*, *Select Kernel*, dan menjalankan notebook sama persis:
+
+| Editor | Akun | Panel agent |
+|---|---|---|
+| Antigravity (Google) | akun Google | panel *Agent* |
+| VS Code + GitHub Copilot Free | akun GitHub | ikon Copilot → *Chat*, mode *Agent* |
+| Cursor | email / Google / GitHub | panel *Agent* (`Ctrl+L`) |
+| Kiro (AWS) | Google / GitHub / AWS Builder ID | panel chat, mode *Vibe* atau *Spec* |
+| Windsurf | email / Google | panel *Cascade* |
+
+Semuanya gratis dengan kuota; kuota itu bisa habis di tengah hari. Lihat bagian
+**Kuota habis** di bawah. Bila jaringan lokasi memblokir, coba **VPN** yang diizinkan kebijakan IT
 perusahaan atau **hotspot HP** (satu HP untuk satu pasangan cukup; ±50–150 MB per jam untuk
 agent).
 
-## Rencana B — OpenCode
+## Rencana B — OpenCode (atau agent terminal lain)
 
 OpenCode adalah AI coding agent open-source. Ia otomatis membaca `AGENTS.md` di repo ini, dan
 menyediakan beberapa **model gratis tanpa akun** (OpenCode Zen).
@@ -41,6 +53,32 @@ menyediakan beberapa **model gratis tanpa akun** (OpenCode Zen).
 
 Model gratis bisa lambat atau kena batas pemakaian di jam ramai, dan daftar modelnya berganti
 dari waktu ke waktu. Kalau satu model lambat, pilih model gratis lain lewat `/models`.
+
+Agent terminal lain yang juga bisa dipakai dari terminal VS Code bila Anda punya akunnya:
+**Gemini CLI** (`gemini`, akun Google), **Codex CLI** (`codex`, akun ChatGPT), **Claude Code**
+(`claude`, berbayar). Ekstensi VS Code **Cline**, **Roo Code**, atau **Continue** bisa memakai
+model dari OpenRouter atau model lokal **Ollama** (tanpa internet, tetapi lambat di laptop).
+
+## Kuota habis: ganti alat, bukan mulai ulang
+
+Riwayat chat tidak ikut pindah ke editor lain, tetapi **file di folder ini ikut**. Karena aturan
+proyek ada di `AGENTS.md` dan kemajuan dicatat di `docs/catatan-kerja.md`, editor baru bisa
+langsung melanjutkan.
+
+1. **Sebelum pindah** (kalau agent lama masih bisa menjawab):
+   > *Perbarui docs/catatan-kerja.md: tujuan, yang sudah selesai, file yang diubah, keputusan
+   > saya, langkah berikutnya, masalah terbuka.*
+2. Simpan semua file (`Ctrl+K S`), tutup editor lama.
+3. Buka **folder yang sama** di editor lain → *Select Kernel* → `anaconda3 (base)`.
+4. **Prompt pertama** di editor baru:
+   > *Baca AGENTS.md, data/kamus_data.md, dan docs/catatan-kerja.md. Ringkas posisi kita dalam
+   > 3 kalimat, lalu lanjutkan "Langkah berikutnya". Jangan mengulang yang sudah selesai.*
+5. Catat perpindahan di `prompt-log.md` dan di bagian *Alat yang dipakai* catatan kerja.
+
+Yang **tidak** ikut pindah: riwayat chat, "memori" agent, dan aturan yang disimpan di pengaturan
+khusus satu editor (`.cursor/rules/`, `.kiro/steering/`, dll.). Karena itu aturan proyek cukup
+ditulis di `AGENTS.md`. Cursor, Kiro, Windsurf, Copilot, OpenCode, dan Codex membaca
+`AGENTS.md`; `GEMINI.md` dan `CLAUDE.md` di repo ini isinya sama, untuk Gemini dan Claude Code.
 
 ## Rencana C — Google Colab + Gemini
 

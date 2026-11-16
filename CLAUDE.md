@@ -28,8 +28,32 @@ memprogram**, jadi kejelasan lebih penting daripada kecanggihan.
 - Untuk model ML: selalu buat **baseline** sederhana, pisahkan train–test sebelum
   pra-pemrosesan, dan laporkan metrik pada data test.
 
+## Grafik
+- Setiap grafik matplotlib memakai `gaya_grafik.py` di akar proyek: panggil `gg.terapkan()` sekali,
+  warnai unit dengan `gg.warna_unit(...)` (warna tetap per unit), lalu `gg.rapikan(ax, judul, x, y)`.
+  Dari `notebook/` atau `skrip/`: `import sys; sys.path.insert(0, "..")` lalu `import gaya_grafik as gg`.
+- Label sumbu menyertakan satuan, mis. `CF (%)`, `Energi (MWh)`. Grafik batang mulai dari 0.
+- Grafik yang dipakai di laporan atau dashboard disimpan dengan `gg.simpan(fig, "nama")` ke `gambar/`.
+
+## Model dan hasil
+- Model terlatih disimpan ke `model/` dengan `joblib.dump` (nama file menyebut tugas dan model,
+  mis. `model/p2_random_forest.joblib`), bersama daftar feature dan metrik test-nya.
+- Setelah menyimpan, muat ulang model dan `assert` prediksinya sama dengan model di memori.
+- Aplikasi Streamlit **memuat** model dari `model/` (`@st.cache_resource`), tidak melatih ulang.
+- Data berwaktu dipisah train–test **berdasarkan tanggal**, bukan acak. Laporkan baseline
+  dan model dalam satu tabel.
+
 ## Cara bekerja
 - Sebelum menulis kode untuk tugas yang lebih dari satu langkah, jelaskan **rencana** dulu.
 - Setelah menjalankan kode, jelaskan hasilnya dalam 2–3 kalimat bahasa Indonesia, termasuk
   hal yang mungkin keliru atau perlu diperiksa pengguna.
 - Bila memperbaiki error, jelaskan penyebabnya. Jangan "memperbaiki" dengan membuang data.
+
+## Catatan kerja (agar bisa pindah alat)
+- Peserta bisa berganti editor atau agent kapan saja (kuota habis, jaringan terblokir). Riwayat
+  chat **tidak ikut pindah** — yang ikut hanya file di folder ini.
+- Saat mulai bekerja, baca `docs/catatan-kerja.md` bila ada isinya, lalu lanjutkan dari
+  "Langkah berikutnya".
+- Setelah menyelesaikan satu tugas, perbarui `docs/catatan-kerja.md`: tujuan, yang sudah selesai,
+  file yang dibuat/diubah, keputusan pengguna, langkah berikutnya, dan masalah terbuka. Singkat.
+- Simpan aturan proyek hanya di file ini (`AGENTS.md`), bukan di pengaturan khusus satu editor.

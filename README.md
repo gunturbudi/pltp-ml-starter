@@ -38,12 +38,19 @@ ekstrak ke `Documents/`, ganti nama foldernya menjadi `pltp-ml-starter`.
    ```bash
    pip install -r requirements.txt
    ```
-3. **Satu AI coding tool** (pilih satu, boleh keduanya):
+3. **Satu AI coding tool utama + satu cadangan** (kuota gratis bisa habis di tengah hari):
 
    | Alat | Akun | Catatan |
    |---|---|---|
    | **Antigravity** (Google) — alat utama | akun Google | gratis, kuota mingguan |
    | **VS Code + GitHub Copilot Free** — alternatif | akun GitHub | gratis, kuota bulanan terbatas |
+   | **Cursor** | email / Google / GitHub | paket Hobby gratis, agent terbatas |
+   | **Kiro** (AWS) — *spec-driven* | Google / GitHub / AWS Builder ID | gratis 50 kredit/bulan |
+   | **Windsurf** | email / Google | gratis, kuota terbatas |
+   | **OpenCode** — Rencana B | tanpa akun | model *free* bergantian |
+
+   Semua editor di atas turunan VS Code: langkahnya sama. Kuota habis? Buka folder ini di alat
+   lain — lihat *Kuota habis* di [`docs/rencana-koneksi.md`](docs/rencana-koneksi.md).
 
 4. Periksa semuanya:
    ```bash
@@ -71,16 +78,19 @@ Browser terbuka di `http://localhost:8501`. Lalu minta AI agent mengubahnya, mis
 | `data/olahan/` | tempat menyimpan hasil olahan Anda — file mentah di `data/` **jangan diubah** |
 | `notebook/` | notebook *rekaman prompt* Hari 1–2 (Rencana D, lihat bawah) |
 | `app/app_mulai.py` | dashboard Streamlit pertama, titik awal capstone |
-| `AGENTS.md`, `GEMINI.md`, `CLAUDE.md`, `.github/copilot-instructions.md` | aturan proyek yang otomatis dibaca AI agent |
+| `AGENTS.md`, `GEMINI.md`, `CLAUDE.md`, `.github/copilot-instructions.md` | aturan proyek yang otomatis dibaca AI agent (isinya sama; dibaca Antigravity, Copilot, Cursor, Kiro, Windsurf, OpenCode, Codex, Claude Code) |
 | `prompt-log.md` | templat catatan prompt — diisi sepanjang pelatihan |
+| `docs/catatan-kerja.md` | "ingatan" proyek: kemajuan dan langkah berikutnya, agar bisa pindah editor tanpa mulai ulang |
 | `docs/rencana-koneksi.md` | apa yang dilakukan bila AI cloud terblokir |
 | `cek_lingkungan.py` | pemeriksa instalasi |
+| `gaya_grafik.py` | satu gaya untuk semua grafik matplotlib (warna tetap per unit, sumbu dari 0) |
+| `gambar/`, `model/` | tempat grafik dan model tersimpan untuk dashboard capstone — tidak ikut `git pull` |
 
 ## 5. Bila AI cloud tidak bisa diakses
 
 Jaringan tempat pelatihan bisa memblokir layanan AI. Urutan cadangan:
 
-- **Rencana A** — Antigravity / VS Code + Copilot (bila terblokir: VPN atau hotspot HP).
+- **Rencana A** — Antigravity / VS Code + Copilot / Cursor / Kiro / Windsurf (bila terblokir: VPN atau hotspot HP).
 - **Rencana B** — OpenCode, agent open-source dengan model gratis tanpa akun.
 - **Rencana C** — Google Colab di browser, dengan Gemini bawaan. Tanpa instalasi.
 - **Rencana D** — buka `notebook/ai-rekaman-hari*.ipynb`: prompt + kode hasil AI sudah tersedia.
